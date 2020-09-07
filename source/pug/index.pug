@@ -1,0 +1,22 @@
+include variables/variables
+include base/mixins
+
+doctype html
+html(lang="ru")
+  head
+    include base/head
+    title Название страницы
+
+  body
+
+    main
+      .container
+        h1 Список страниц
+        ol
+          li
+            a(href=siteUrl.COMPONENTS)= 'Компоненты --- ' + siteUrl.COMPONENTS
+          li
+            a(href=siteUrl.MAIN)= 'Главная --- ' + siteUrl.MAIN
+
+    script(src='js/vendor.min.js')
+    script(src='js/main.min.js')

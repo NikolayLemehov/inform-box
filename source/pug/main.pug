@@ -1,0 +1,38 @@
+include variables/variables
+include base/mixins
+- var CURRENT_URL = siteUrl.MAIN
+
+doctype html
+html(lang="ru")
+  head
+    include base/head
+    title Главная
+
+  body
+    //-include base/header
+    main
+      h1 Pantone colors
+      button(type='button') Reset
+      table.table
+        tr
+          th ID
+          th.table__name Name
+          th Year
+          th Color
+          th Pantone value
+        tr
+          td 1
+          td.table__name Cerulean
+          td 2000
+          td #98b2d1
+          td 15-4020
+        tr
+          td 2
+          td.table__name Fuchsia rose
+          td 2001
+          td #c74375
+          td 17-2031
+    //-include base/footer
+    //-include base/modal
+    script(src='js/vendor.min.js')
+    script(src='js/main.min.js')

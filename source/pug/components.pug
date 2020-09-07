@@ -1,0 +1,94 @@
+include variables/variables
+include base/mixins
+- var CURRENT_URL = siteUrl.COMPONENTS
+
+doctype html
+html(lang="ru")
+  head
+    include base/head
+    title Фонд семьи Шмотьевых — Компоненты
+
+  body
+    include base/header
+
+    main(style='margin-top: 20px;')
+      .container
+        a(href="index.html")
+          span(style='font-size: 2em;')= '←  '
+          span вернуться на разводящую
+        h1 h1 Компоненты
+        h2 h2 Примеры лого
+        // Инлайновый стиль в svg здесь для примера, их нужно добавлять через style.css
+        div(style='background: #46535e; padding: 20px; color: white;')
+          ol
+            li(style='margin-bottom: 15px;')
+              a.logo.logo--white.logo--header(href=(siteUrl.MAIN !== CURRENT_URL ? siteUrl.MAIN : false),
+                aria-label='Переход на главную')
+                +inlineSvg('195', '70', 'logo')
+            li(style='margin-bottom: 15px;')
+              a.logo.logo--beige.logo--header(href=(siteUrl.MAIN !== CURRENT_URL ? siteUrl.MAIN : false),
+                aria-label='Переход на главную')
+                +inlineSvg('195', '70', 'logo')
+            li
+              a.logo.logo--white.logo--footer(href=(siteUrl.MAIN !== CURRENT_URL ? siteUrl.MAIN : false),
+                aria-label='Переход на главную')
+                +inlineSvg('155', '56', 'logo')
+
+        h2 h2 Модалки
+        p
+          a(href="#" data-modal="feedback") modal--feedback link
+        p
+          a(href="#" data-modal="success") modal--success link
+        p отступ
+
+        h2 h2 Кнопки
+
+        h3 h3 --main "ПОДРОБНЕЕ"
+        .btn-wrapper
+          a.btn.btn--main(href='#') Подробнее
+        p отступ
+
+        h3 h3 --detail-2-beige "ПОДРОБНЕЕ-2"
+        .btn-wrapper.btn-wrapper--center(style='background: #33312b;')
+          a.btn.btn--detail-2-beige(href='#') Подробнее
+            +inlineSvg('62', '35', 'arrow-right-beige')
+        p отступ
+
+        h3 h3 --detail-2-black "ПОДРОБНЕЕ-2"
+        .btn-wrapper.btn-wrapper--center
+          a.btn.btn--detail-2-black(href='#') Подробнее
+            +inlineSvg('62', '35', 'arrow-right-black')
+        p отступ
+
+        h3 h3 --more "ЗАГРУЗИТЬ ЕЩЕ"
+        .btn-wrapper.btn-wrapper--center
+          a.btn.btn--more(href='#') Загрузить еще
+        p отступ
+
+        h3 h3 --next-section
+        a.btn.btn--next-section.js-move-to(href="#slider-example")
+          +inlineSvg('70', '70', 'arrow-down')
+        p отступ
+
+        h2#slider-example h2 Слайдер
+        ul
+          li классы с содержанием 'swiper' обязательны
+          li стили в pagination нужно использовать через внешние стили
+          li .swiper-slide лучше меньше трогать и использовать как контейнер с дочерним одним блоком в котором можно
+            |  делать всё что угодно
+        .swiper-container.js-test-slider
+          .swiper-wrapper
+            .swiper-slide
+              .card-slide 1
+            .swiper-slide
+              .card-slide 2
+            .swiper-slide
+              .card-slide 3
+          button.swiper-button-prev(type='button') назад
+          button.swiper-button-next(type='button') вперёд
+          .swiper-pagination.self-class(style='width: auto; left: 50%;')
+
+    include base/footer
+    include base/modal
+    script(src='js/vendor.min.js')
+    script(src='js/main.min.js')

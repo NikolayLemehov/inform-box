@@ -1,0 +1,32 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $content + $desktop-xxl-padding * 2;
+  margin: 0 auto;
+  padding: 0 $desktop-xxl-padding;
+
+  &--external {
+    max-width: none;
+    padding: 0 $external-padding;
+
+    @media (max-width: $content + $external-padding * 2 - 1) {
+      max-width: $content + $desktop-xxl-padding * 2;
+      padding: 0 $desktop-xxl-padding;
+    }
+  }
+
+  @include viewport--lg {
+    max-width: $content + $desktop-lg-padding * 2;
+    padding: 0 $desktop-lg-padding;
+  }
+
+  @include viewport--md {
+    padding: 0 $tablet-padding;
+  }
+
+  &--no-padding {
+    @include viewport--sm {
+      padding: 0;
+    }
+  }
+}

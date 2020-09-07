@@ -1,0 +1,24 @@
+include ../components/modal-feedback
+include ../components/modal-success
+include ../components/modal-menu
+
+mixin modal(modifier)
+  .modal(class='modal--' + modifier)
+    .modal__wrapper
+      .modal__overlay
+      .modal__content(class='modal__content--' + modifier)
+
+        case modifier
+          when 'feedback'
+            +modal-feedback
+          when 'success'
+            +modal-success
+          when 'menu'
+            +modal-menu
+
+        //-button.modal__close-btn.btn-reset(type="button" aria-label="Закрыть попап")
+          +inlineSvg('15', '15', 'icon-close')
+
++modal('feedback')
++modal('success')
++modal('menu')

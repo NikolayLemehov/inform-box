@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Краткое описание сайта">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Фонд семьи Шмотьевых — Компоненты</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container container--external"></div>
+    </header>
+    <main style="margin-top: 20px;">
+      <div class="container"><a href="index.html"><span style="font-size: 2em;">←  </span><span>вернуться на разводящую</span></a>
+        <h1>h1 Компоненты</h1>
+        <h2>h2 Примеры лого</h2>
+        <!-- Инлайновый стиль в svg здесь для примера, их нужно добавлять через style.css-->
+        <div style="background: #46535e; padding: 20px; color: white;">
+          <ol>
+            <li style="margin-bottom: 15px;"><a class="logo logo--white logo--header" href="main.html" aria-label="Переход на главную">
+                <svg width="195" height="70">
+                  <use xlink:href="img/sprite.svg#logo"></use>
+                </svg></a></li>
+            <li style="margin-bottom: 15px;"><a class="logo logo--beige logo--header" href="main.html" aria-label="Переход на главную">
+                <svg width="195" height="70">
+                  <use xlink:href="img/sprite.svg#logo"></use>
+                </svg></a></li>
+            <li><a class="logo logo--white logo--footer" href="main.html" aria-label="Переход на главную">
+                <svg width="155" height="56">
+                  <use xlink:href="img/sprite.svg#logo"></use>
+                </svg></a></li>
+          </ol>
+        </div>
+        <h2>h2 Модалки</h2>
+        <p><a href="#" data-modal="feedback">modal--feedback link</a></p>
+        <p><a href="#" data-modal="success">modal--success link</a></p>
+        <p>отступ</p>
+        <h2>h2 Кнопки</h2>
+        <h3>h3 --main "ПОДРОБНЕЕ"</h3>
+        <div class="btn-wrapper"><a class="btn btn--main" href="#">Подробнее</a></div>
+        <p>отступ</p>
+        <h3>h3 --detail-2-beige "ПОДРОБНЕЕ-2"</h3>
+        <div class="btn-wrapper btn-wrapper--center" style="background: #33312b;"><a class="btn btn--detail-2-beige" href="#">Подробнее
+            <svg width="62" height="35">
+              <use xlink:href="img/sprite.svg#arrow-right-beige"></use>
+            </svg></a></div>
+        <p>отступ</p>
+        <h3>h3 --detail-2-black "ПОДРОБНЕЕ-2"</h3>
+        <div class="btn-wrapper btn-wrapper--center"><a class="btn btn--detail-2-black" href="#">Подробнее
+            <svg width="62" height="35">
+              <use xlink:href="img/sprite.svg#arrow-right-black"></use>
+            </svg></a></div>
+        <p>отступ</p>
+        <h3>h3 --more "ЗАГРУЗИТЬ ЕЩЕ"</h3>
+        <div class="btn-wrapper btn-wrapper--center"><a class="btn btn--more" href="#">Загрузить еще</a></div>
+        <p>отступ</p>
+        <h3>h3 --next-section</h3><a class="btn btn--next-section js-move-to" href="#slider-example">
+          <svg width="70" height="70">
+            <use xlink:href="img/sprite.svg#arrow-down"></use>
+          </svg></a>
+        <p>отступ</p>
+        <h2 id="slider-example">h2 Слайдер</h2>
+        <ul>
+          <li>классы с содержанием 'swiper' обязательны</li>
+          <li>стили в pagination нужно использовать через внешние стили</li>
+          <li>
+            .swiper-slide лучше меньше трогать и использовать как контейнер с дочерним одним блоком в котором можно делать всё что угодно</li>
+        </ul>
+        <div class="swiper-container js-test-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card-slide">1</div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-slide">2</div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-slide">3</div>
+            </div>
+          </div>
+          <button class="swiper-button-prev" type="button">назад</button>
+          <button class="swiper-button-next" type="button">вперёд</button>
+          <div class="swiper-pagination self-class" style="width: auto; left: 50%;"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+        <div class="modal modal--feedback">
+          <div class="modal__wrapper">
+            <div class="modal__overlay"></div>
+            <div class="modal__content modal__content--feedback">
+                  <p>Я обычная модалка</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal--success">
+          <div class="modal__wrapper">
+            <div class="modal__overlay"></div>
+            <div class="modal__content modal__content--success">
+                  <p>А я резиновая и без скейла, а еще в меня передали новый модификатор!</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal--menu">
+          <div class="modal__wrapper">
+            <div class="modal__overlay"></div>
+            <div class="modal__content modal__content--menu">
+                  <p>меню</p>
+            </div>
+          </div>
+        </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

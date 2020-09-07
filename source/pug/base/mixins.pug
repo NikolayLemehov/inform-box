@@ -1,0 +1,14 @@
+//- пример root: 'content/news/'
+mixin img(root, name, type, width, height, alt)
+  img(src='img/' + root + name + '@1x.' + type ,
+    srcset='img/' + root + name + '@2x.' + type + ' 2x',
+    width= width, height= height, alt= alt)
+
+mixin picture(root, name, type, width, height, alt)
+  picture
+    source(type="image/webp" srcset='img/' + root + name + '@1x.webp 1x, img/' + root + name + '@2x.webp 2x')
+    +img(root, name, type, width, height, alt)
+
+mixin inlineSvg(width, height, name, svgClass)
+  svg(width=width height=height class=svgClass)
+    use(xlink:href="img/sprite.svg#" + name)
