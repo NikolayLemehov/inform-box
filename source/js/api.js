@@ -23,49 +23,11 @@ export default class API {
     this._authorization = authorization;
   }
 
-  getPoints() {
+  getColors() {
     return this._load({url: ``})
       .then((response) => response.json())
       .then((response) => ColorAdapterModel.parseColors(response.data));
   }
-
-  // createPoint(eventAdapterModel) {
-  //   return this._load({
-  //     url: `points`,
-  //     method: Method.POST,
-  //     body: JSON.stringify(eventAdapterModel.getRAW()),
-  //     headers: new Headers({'Content-Type': `application/json`})
-  //   })
-  //     .then((response) => response.json())
-  //     .then(EventAdapterModel.parseEvent);
-  // }
-  //
-  // updatePoint(id, eventAdapterModel) {
-  //   return this._load({
-  //     url: `points/${id}`,
-  //     method: Method.PUT,
-  //     body: JSON.stringify(eventAdapterModel.getRAW()),
-  //     headers: new Headers({'Content-Type': `application/json`})
-  //   })
-  //     .then((response) => response.json())
-  //     .then(EventAdapterModel.parseEvent);
-  // }
-  //
-  // deletePoint(id) {
-  //   return this._load({url: `points/${id}`, method: Method.DELETE});
-  // }
-  //
-  // getDestinations() {
-  //   return this._load({url: `destinations`})
-  //     .then((response) => response.json())
-  //     .then(DestinationAdapterModel.parseDestination);
-  // }
-  //
-  // getOffers() {
-  //   return this._load({url: `offers`})
-  //     .then((response) => response.json())
-  //     .then(OffersAdapterModel.parseOffers);
-  // }
 
   _load({url, method = Method.GET, body = null, headers = new Headers()}) {
     headers.append(`Authorization`, this._authorization);
