@@ -1,9 +1,14 @@
 const columnVisibility = {
-  ID: true,
-  NAME: true,
-  YEAR: false,
-  COLOR: true,
-  PANTONE: true,
+  id: true,
+  name: true,
+  year: true,
+  color: true,
+  pantone: true,
+  isSaved: false,
 };
 
-export {columnVisibility};
+const storeId = {
+  COLUMN_VISIBILITY: `column_visibility`,
+};
+
+export {columnVisibility, storeId};
