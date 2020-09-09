@@ -4,7 +4,7 @@ export default class ColorAdapterModel {
     this.name = endData[`name`];
     this.year = endData[`year`];
     this.color = endData[`color`];
-    this.pantoneValue = endData[`pantone_value`];
+    this.pantone = endData[`pantone_value`];
   }
 
   static parseColor(endData) {

@@ -17,7 +17,7 @@ const store = new Store(STORE_NAME, window.localStorage);
 console.log(store.getColumnVisibility());
 const mainEl = document.querySelector(`main`);
 const colorsModel = new ColorsModel();
-const colorController = new ColorController(mainEl, colorsModel);
+const colorController = new ColorController(mainEl, colorsModel, store);
 
 api.getColors().then((colorAdapterModels) => {
   console.log(`main`, colorAdapterModels);
