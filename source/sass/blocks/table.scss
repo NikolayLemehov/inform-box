@@ -1,3 +1,58 @@
-.table__name {
-  //display: none;
+@import "../variables";
+
+.table {
+  border-collapse: collapse;
+
+  th {
+    padding: 3px 20px 4px 10px;
+    border: 1px solid $color-gray;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    label {
+      font-size: 12px;
+      line-height: 20px;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      input {
+        vertical-align: middle;
+        margin: 0;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      span {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  td {
+    padding: 16px 20px 12px 10px;
+    border-bottom: 1px solid $color-gray;
+  }
+}
+
+.table__color-example {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.table__color-text {
+  display: inline-block;
+  vertical-align: middle;
 }

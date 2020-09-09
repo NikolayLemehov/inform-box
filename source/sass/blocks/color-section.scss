@@ -1,0 +1,52 @@
+@import "../variables";
+
+.color-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: $color-default-white;
+
+  h1 {
+    padding: 0 22px;
+    margin: 17px 0 0;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.color-section__btn-reset {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-left: auto;
+  padding: 10px 25px;
+
+  &:not([disabled]):hover {
+    cursor: pointer;
+  }
+
+  & span {
+    margin-left: 5px;
+    font-size: 14px;
+    color: $color-blue;
+  }
+
+  &[disabled] span {
+    color: grayscale($color-blue);
+  }
+
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: $color-blue;
+  }
+
+  &[disabled] svg {
+    fill: grayscale($color-blue);
+  }
+}
+
+.color-section__table {
+  width: 100%;
+  margin-top: 10px;
+}

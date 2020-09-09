@@ -6,10 +6,14 @@ const createColorsTemplate = (colors, columnVisibility) => {
   const createColorTemplate = (colors) => colors.map((color) => {
     return (
       `<tr>
-        ${columnVisibility.id ? `<td class="table__id">${color.id}</td>` : ``}
+        ${columnVisibility.id ? `<td class="table__id text-align-right">${color.id}</td>` : ``}
         ${columnVisibility.name ? `<td class="table__name">${color.name}</td>` : ``}
-        ${columnVisibility.year ? `<td class="table__year">${color.year}</td>` : ``}
-        ${columnVisibility.color ? `<td class="table__color">${color.color}</td>` : ``}
+        ${columnVisibility.year ? `<td class="table__year text-align-right">${color.year}</td>` : ``}
+        ${columnVisibility.color ?
+          `<td class="table__color">
+            <span class="table__color-example" style="background-color: ${color.color}"></span>
+            <span class="table__color-text">${color.color}</span>
+          </td>` : ``}
         ${columnVisibility.pantone ? `<td class="table__pantone">${color.pantone}</td>` : ``}
       </tr>`
     );
@@ -18,13 +22,21 @@ const createColorsTemplate = (colors, columnVisibility) => {
   return (
     `<section class="color-section">
       <h1>Pantone colors</h1>
-      <button class="color-section__btn-reset" type="button" ${isAllColumnVisible ? `disabled` : ``}>Reset</button>
-      <table class="table">
+      <button class="color-section__btn-reset btn-reset" type="button" ${isAllColumnVisible ? `disabled` : ``}>
+        <svg width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/sprite.svg#icon-refresh"></use>
+        </svg>
+        <span>Reset</span>
+      </button>
+      <table class="color-section__table table">
         <tr>
           ${Object.values(column).reduce((acc, it) => {
             acc += `${columnVisibility[it.NAME] ?
-              `<th class="table__${it.NAME}">
-                <label><input type="checkbox" name="hide-${it.NAME}" checked>${it.TEXT}</label>
+              `<th class="table__${it.NAME}${it.TEXT_ALIGN ? ' text-align-right' : ' text-align-left'}">
+                <label class="">
+                  <input type="checkbox" name="hide-${it.NAME}" checked>
+                  <span>&nbsp;${it.TEXT}</span>
+                </label>
               </th>` : ``}`
             return acc;
           }, ``)}
