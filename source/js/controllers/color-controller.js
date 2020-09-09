@@ -25,7 +25,7 @@ export default class ColorController {
 
     this._colorComponent.setHideIdColumnHandler((evt) => {
       evt.preventDefault();
-      if (!evt.target.checked) {
+      if (evt.target.checked) {
         return;
       }
       this._columnVisibility.id = false;
@@ -35,7 +35,7 @@ export default class ColorController {
 
     this._colorComponent.setHideIdColumnHandler((evt) => {
       evt.preventDefault();
-      if (!evt.target.checked) {
+      if (evt.target.checked) {
         return;
       }
       this._columnVisibility.id = false;
@@ -45,7 +45,7 @@ export default class ColorController {
 
     this._colorComponent.setHideNameColumnHandler((evt) => {
       evt.preventDefault();
-      if (!evt.target.checked) {
+      if (evt.target.checked) {
         return;
       }
       this._columnVisibility.name = false;
@@ -55,7 +55,7 @@ export default class ColorController {
 
     this._colorComponent.setHideYearColumnHandler((evt) => {
       evt.preventDefault();
-      if (!evt.target.checked) {
+      if (evt.target.checked) {
         return;
       }
       this._columnVisibility.year = false;
@@ -65,7 +65,7 @@ export default class ColorController {
 
     this._colorComponent.setHideColorColumnHandler((evt) => {
       evt.preventDefault();
-      if (!evt.target.checked) {
+      if (evt.target.checked) {
         return;
       }
       this._columnVisibility.color = false;
@@ -75,7 +75,7 @@ export default class ColorController {
 
     this._colorComponent.setHidePantoneColumnHandler((evt) => {
       evt.preventDefault();
-      if (!evt.target.checked) {
+      if (evt.target.checked) {
         return;
       }
       this._columnVisibility.pantone = false;

@@ -24,7 +24,7 @@ const createColorsTemplate = (colors, columnVisibility) => {
           ${Object.values(column).reduce((acc, it) => {
             acc += `${columnVisibility[it.NAME] ?
               `<th class="table__${it.NAME}">
-                <label><input type="checkbox" name="hide-${it.NAME}">${it.TEXT}</label>
+                <label><input type="checkbox" name="hide-${it.NAME}" checked>${it.TEXT}</label>
               </th>` : ``}`
             return acc;
           }, ``)}
