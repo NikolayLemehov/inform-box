@@ -1,6 +1,4 @@
-import ColorAdapterModel from "./models/color-adapter-model";
-// import DestinationAdapterModel from "./models/destination-adapter-model";
-// import OffersAdapterModel from "./models/offer-adapter-model";
+import ColorAdapterModel from "../models/color-adapter-model";
 
 const Method = {
   GET: `GET`,

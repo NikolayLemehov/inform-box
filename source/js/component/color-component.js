@@ -74,7 +74,13 @@ export default class ColorComponent extends AbstractComponent {
   }
 
   setResetHandler(handler) {
-    this.getElement().querySelector(`.color-section__btn-reset`).addEventListener(`click`, handler);
+    const btn = this.getElement().querySelector(`.color-section__btn-reset`);
+    btn.addEventListener(`click`, handler);
+    btn.addEventListener(`mousedown`, () => {
+      btn.addEventListener(`focus`, () => {
+        btn.blur();
+      });
+    });
     this._resetHandler = handler;
   }
 

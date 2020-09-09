@@ -1,5 +1,5 @@
 import {polyfills} from './utils/polyfills';
-import API from "./api";
+import API from "./api/api";
 import Store from "./api/store";
 import ColorsModel from "./models/colors-model";
 import ColorController from "./controllers/color-controller";
