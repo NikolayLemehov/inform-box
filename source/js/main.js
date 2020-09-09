@@ -15,9 +15,9 @@ const END_POINT = `https://reqres.in/api/unknown?per_page=12`;
 const api = new API(END_POINT, AUTHORIZATION);
 const store = new Store(STORE_NAME, window.localStorage);
 console.log(store.getColumnVisibility());
-const mainEl = document.querySelector(`main`);
+const colorContainer = document.querySelector(`.js-include-color`);
 const colorsModel = new ColorsModel();
-const colorController = new ColorController(mainEl, colorsModel, store);
+const colorController = new ColorController(colorContainer, colorsModel, store);
 
 api.getColors().then((colorAdapterModels) => {
   console.log(`main`, colorAdapterModels);
