@@ -2,6 +2,7 @@ import AbstractComponent from "./abstract-component";
 import {column} from "../utils/variables";
 
 const createColorsTemplate = (colors, columnVisibility) => {
+  const isAllColumnVisible = Object.entries(columnVisibility).every((it) => (it[1] === true || it[0] === `isSaved`));
   const createColorTemplate = (colors) => colors.map((color) => {
     return (
       `<tr>
@@ -17,7 +18,7 @@ const createColorsTemplate = (colors, columnVisibility) => {
   return (
     `<section class="color-section">
       <h1>Pantone colors</h1>
-      <button class="color-section__btn-reset" type="button">Reset</button>
+      <button class="color-section__btn-reset" type="button" ${isAllColumnVisible ? `disabled` : ``}>Reset</button>
       <table class="table">
         <tr>
           ${Object.values(column).reduce((acc, it) => {
